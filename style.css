@@ -1,0 +1,269 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0b132b;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 10px;
+  overflow-x: hidden;
+}
+
+/* Encabezado */
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.subtitulo {
+  background: #d90429;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px rgba(217, 4, 41, 0.4);
+  text-align: center;
+}
+
+/* Contenedor principal del Ramo */
+.ramo-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 600px;
+  margin: 40px auto 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Imagen del papel/envoltorio de ramo en el fondo (si tienes ramo.jpg) */
+.ramo-fondo {
+  position: absolute;
+  bottom: -20px;
+  width: 320px;
+  z-index: 1;
+  border-radius: 20px; /* Redondea los bordes del fondo */
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%); /* Desvanece la parte inferior */
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
+/* Galería tipo abanico/ramo */
+.galeria-ramo {
+  position: absolute;
+  top: 60px;
+  width: 100%;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 2;
+  overflow: visible;
+}
+
+/* Estilo para cada carrito */
+.carrito-img {
+  position: absolute;
+  width: 85px;
+  height: 85px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, z-index 0.3s ease;
+  background-color: #fff;
+}
+
+.carrito-img:hover {
+  transform: scale(1.3) rotate(0deg) !important;
+  z-index: 100 !important;
+  border-color: #ffb703;
+}
+
+/* Acomodo e inclinación tipo ramo para cada carrito */
+.carrito-img:nth-child(1)  { transform: translate(-140px, -180px) rotate(-25deg); }
+.carrito-img:nth-child(2)  { transform: translate(-70px, -210px) rotate(-15deg); }
+.carrito-img:nth-child(3)  { transform: translate(0px, -220px) rotate(0deg); }
+.carrito-img:nth-child(4)  { transform: translate(70px, -210px) rotate(15deg); }
+.carrito-img:nth-child(5)  { transform: translate(140px, -180px) rotate(25deg); }
+
+.carrito-img:nth-child(6)  { transform: translate(-160px, -100px) rotate(-30deg); }
+.carrito-img:nth-child(7)  { transform: translate(-90px, -130px) rotate(-18deg); }
+.carrito-img:nth-child(8)  { transform: translate(-20px, -145px) rotate(-8deg); }
+.carrito-img:nth-child(9)  { transform: translate(50px, -145px) rotate(8deg); }
+.carrito-img:nth-child(10) { transform: translate(120px, -130px) rotate(18deg); }
+.carrito-img:nth-child(11) { transform: translate(170px, -100px) rotate(30deg); }
+
+.carrito-img:nth-child(12) { transform: translate(-120px, -30px) rotate(-20deg); }
+.carrito-img:nth-child(13) { transform: translate(-60px, -55px) rotate(-10deg); }
+.carrito-img:nth-child(14) { transform: translate(0px, -65px) rotate(0deg); }
+.carrito-img:nth-child(15) { transform: translate(60px, -55px) rotate(10deg); }
+.carrito-img:nth-child(16) { transform: translate(120px, -30px) rotate(20deg); }
+
+.carrito-img:nth-child(17) { transform: translate(-80px, 40px) rotate(-15deg); }
+.carrito-img:nth-child(18) { transform: translate(-25px, 20px) rotate(-5deg); }
+.carrito-img:nth-child(19) { transform: translate(30px, 20px) rotate(5deg); }
+.carrito-img:nth-child(20) { transform: translate(80px, 40px) rotate(15deg); }
+
+
+/* Pantalla de Carga (Loader) */
+#loader-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #0b132b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#loader-screen h2 {
+  color: #ffffff;
+  font-size: 2rem;
+  animation: parpadeo 1.5s infinite ease-in-out;
+}
+
+@keyframes parpadeo {
+  0%, 100% { opacity: 0.3; transform: scale(0.98); }
+  50% { opacity: 1; transform: scale(1.02); }
+}
+
+/* Ocultar contenido principal al cargar */
+.hidden {
+  display: none !important;
+}
+
+
+.card {
+  background-color: #dc2626;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 12px;
+  display: inline-block;
+  cursor: pointer;
+  margin: 15px auto;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
+  font-weight: bold;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background-color: #b91c1c;
+}
+
+
+.hidden {
+display: none !important;
+}
+
+#card-screen {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+min-height: 80vh;
+}
+
+
+
+/* Contenedor de estrellas de fondo */
+.espacio-fondo {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100vh;
+pointer-events: none;
+z-index: 0;
+overflow: hidden;
+background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+}
+
+/* Estrellas fugaces */
+.estrella-fugaz {
+position: absolute;
+top: 50%;
+left: 50%;
+width: 4px;
+height: 4px;
+background: #fff;
+border-radius: 50%;
+box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1), 0 0 0 8px rgba(255, 255, 255, 0.1), 0 0 20px rgba(255, 255, 255, 1);
+animation: fugaz 3s linear infinite;
+}
+
+.estrella-fugaz::before {
+content: '';
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+width: 120px;
+height: 1px;
+background: linear-gradient(90deg, #fff, transparent);
+}
+
+.estrella-fugaz:nth-child(1) {
+top: 10%;
+left: 80%;
+animation-delay: 0s;
+animation-duration: 2.5s;
+}
+
+.estrella-fugaz:nth-child(2) {
+top: 30%;
+left: 60%;
+animation-delay: 1.2s;
+animation-duration: 3s;
+}
+
+.estrella-fugaz:nth-child(3) {
+top: 15%;
+left: 40%;
+animation-delay: 2.4s;
+animation-duration: 2s;
+}
+
+@keyframes fugaz {
+0% {
+transform: rotate(315deg) translateX(0);
+opacity: 1;
+}
+70% {
+opacity: 1;
+}
+100% {
+transform: rotate(315deg) translateX(-600px);
+opacity: 0;
+}
+}
+
+/* Asegurar que el contenido del ramo quede por encima del fondo */
+#card-screen, #ramo-screen, #loader-screen {
+position: relative;
+z-index: 2;
+}
+
+#card-screen, #ramo-screen, #loader-screen {
+  position: relative;
+  z-index: 10 !important;
+}
+
+.titulo-final {
+  color: #ffffff;
+  position: relative;
+  z-index: 10 !important;
+}
